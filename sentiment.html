@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analyzer</title>
+</head>
+<body>
+    <h2>Sentiment Analyzer</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="text_input">Enter text:</label>
+        <input type="text" name="text_input" required>
+        <button type="submit">Analyze</button>
+    </form>
+    {% if sentiment %}
+        <p>Sentiment: <strong>{{ sentiment }}</strong></p>
+    {% endif %}
+</body>
+</html>
